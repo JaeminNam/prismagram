@@ -6,7 +6,6 @@ export const generateSecret  = () => {
     const loginSecret = "#secretKey";
     return loginSecret;
 }
-console.log(process.env.SENDGRID_USERNAME,process.env.SENDGRID_PASSWORD); 
 
 const sendMail = (email) => {
     const options =  {
