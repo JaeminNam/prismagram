@@ -4,7 +4,6 @@ import { prisma } from "../../../../generated/prisma-client";
 export default {
     Mutation : {
         toggleLike : async(_,args,{request}) => {
-            console.log(request.user);
             isAuthenticated(request);
             const { postId } = args;
             const { user } = request;
