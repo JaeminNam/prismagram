@@ -1,4 +1,5 @@
 import { prisma } from "../../generated/prisma-client";
+import { MESSAGE_USERINFO_FRAGMENT } from "../fragments";
 
 export default {
     User: {
@@ -53,5 +54,13 @@ export default {
         likeCount: (parent) => prisma.likesConnection({
             where:{post:{id:parent.id}}
         }).aggregate().count()
+    },
+    Room: {
+        participants: (request) => prisma.room({id:request.id}).participants(),
+        messages: (request) => prisma.room({id:request.id}).messages().$fragment(MESSAGE_IN_ROOM_FRAGMENT)
+    },
+    Message: {
+        from: (request) => prisma.user({id:request.id}),
+        to: (request) => prisma.user({id:request.id})
     }
 }
