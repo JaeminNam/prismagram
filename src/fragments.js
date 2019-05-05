@@ -9,6 +9,7 @@ export const COMMENT_FRAGMENT = `
             firstName
             lastName
             bio
+            avatar
         }
     }
 `;

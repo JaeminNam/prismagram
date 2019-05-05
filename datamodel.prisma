@@ -1,6 +1,7 @@
 type User {
   id: ID! @id
   email: String! @unique
+  avatar: String
   userName: String! @unique
   firstName: String @default(value:"")
   lastName: String
