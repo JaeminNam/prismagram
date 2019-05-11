@@ -2,9 +2,7 @@ type Mutation {
     createAccount(
         userName:String!
         email:String!
-        firstName:String
-        lastName:String
-        bio:String
-        avatar:String
-    ):User!
+        firstName:String!
+        lastName:String!
+    ):Boolean!
 }
